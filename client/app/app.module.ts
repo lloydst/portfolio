@@ -1,16 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { AppComponent} from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProjectsComponent } from './projects/projects.component';
 import { InternshipComponent } from './internship/internship.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-
-
-
-
+import { DataService } from './data.service';
 
 
 @NgModule({
@@ -24,9 +22,10 @@ import { AboutComponent } from './about/about.component';
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+     HttpModule
   ],
-  providers: [], // placeholder serves as a example
+  providers: [DataService], // placeholder serves as a example
   bootstrap: [AppComponent]
 })
 export class AppModule { }

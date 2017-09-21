@@ -1,37 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
 
-  contact = [];
-  public email;
-  public phone;
-  constructor(private http: HttpClient) {}
+  contact: Array<any>;
 
-  ngOnInit(): void {
-    interface GetResponse {
-      contacts: {
-        email: string;
-        phone: string;
-        company: string;
-      };
-    }
-    this.http.get<GetResponse>('http://localhost:3001/contact').subscribe(data => {
-      this.email = data.contacts.email;
-      this.phone = data.contacts.phone;
 
-    },
-    (err: HttpErrorResponse) => {
-      if (err.error instanceof Error) {
-        console.log('Client-side error occured.');
-      } else {
-        console.log('Server-side error occured.');
-      }
-    });
 
-  }
-}
+  constructor(private _dataService: DataService) {
+
+         // Access the Data Service's getUsers() method we defined
+         this._dataService.getUsers()
+             .subscribe(res => this.contact = res);
+       }
+     }
