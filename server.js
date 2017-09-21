@@ -26,8 +26,8 @@ app.use(bodyParser.urlencoded({ extended: false}));
 
 // Angular DIST output folder
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use('/jscalc', express.static(path.join(__dirname,'./server/views/htmlcalc')));
-app.use('/jqcalc', express.static(path.join(__dirname,'./server/views/jquerycalc')));
+app.use('/jscalc', express.static(path.join(__dirname,'./server/views/htmlcalc'))); // works
+app.use('/jqcalc', express.static(path.join(__dirname,'./server/views/jquerycalc'))); // works
 app.use('/angularcalc', express.static(path.join(__dirname,'./server/views/angularjscalc')));
 app.use('/bomberman', express.static(path.join(__dirname,'./server/views/bomberman')));
 app.use('/hangman', express.static(path.join(__dirname,'./server/views/hangman')));
