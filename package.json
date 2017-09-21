@@ -6,7 +6,7 @@
     "ng": "ng",
     "back": "nodemon server.js",
     "front": "ng serve -o",
-    "start": "ng build -prod && node server.js ",
+    "start": "ng build --prod && node server.js ",
     "build": "ng build",
     "lint": "ng lint",
     "e2e": "ng e2e"
