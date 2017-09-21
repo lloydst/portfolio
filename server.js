@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const http = require('http');
+const https = require('https');
 const app = express();
 
 // API file for interacting with MongoDB
@@ -26,6 +26,6 @@ app.get('*', (req, res) => {
 const port = process.env.PORT || '3000';
 app.set('port', port);
 
-const server = http.createServer(app);
+const server = https.createServer(app);
 
 server.listen(port, () => console.log(`Running on localhost:${port}`));
