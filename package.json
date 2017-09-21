@@ -4,10 +4,11 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "postinstall": "ng build --aot -prod",
     "back": "nodemon server.js",
     "front": "ng serve -o",
     "build": "ng build",
-    "start": "ng build && node server.js ",
+    "start": "node server.js ",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -30,10 +31,11 @@
     "express": "^4.15.4",
     "mongoose": "^4.11.12",
     "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "@angular/cli": "1.4.2"
   },
   "devDependencies": {
-    "@angular/cli": "1.4.2",
+
     "@angular/compiler-cli": "^4.2.4",
     "@angular/language-service": "^4.2.4",
     "@types/jasmine": "~2.5.53",
