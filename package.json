@@ -6,7 +6,7 @@
     "ng": "ng",
     "back": "nodemon server.js",
     "front": "ng serve -o",
-    "both": "ng build -prod && nodemon server.js ",
+    "start": "ng build -prod && nodemon server.js ",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
