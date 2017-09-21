@@ -8,7 +8,6 @@
     "front": "ng serve -o",
     "start": "ng build -prod && nodemon server.js ",
     "build": "ng build",
-    "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
