@@ -5,10 +5,11 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 export class DataService {
      result: any;
      constructor(private _http: Http) { }
-
-       getUsers() {
-         return this._http.get('/api/contact')
-           .map(result => this.result = result.json().data);
-       }
-
+     // using these to access the db
+     getUsers() {
+       return this._http.get('/api/contact')
+         .map(result => this.result = result.json().data);
      }
+
+
+}

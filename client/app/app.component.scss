@@ -1,37 +1,42 @@
-.title {
-    text-align: center;
+title {
+     text-align: center;
+     background-image: url('../assets/img/seti_code.jpg');
+     background-size: cover;
+
+     h1 {
+          color:white;
+     }
 }
 nav {
-  width: 100%;
-  div.nav-container {
-    text-align: center;
-    height: 3em;
-    background-color: navy;
-    padding: 1px;
+     width: 100%;
+     div.nav-container {
+          text-align: center;
+          height: 3em;
+          background-color: navy;
+          padding: 1px;
+          ul {
+               margin: 1em;
+               list-style: none;
+               li {
+                    display: inline;
+                    background-color: #fff;
+                    margin: 3%;
+                    padding: 2px;
+                    border:1px solid black;
+                    border-radius: 5px;
+                    a {
+                         text-decoration: none;
+                         text-decoration-color: black;
+                    }
+               }
 
-    ul {
-
-      margin: 1em;
-      list-style: none;
-      li {
-        display: inline;
-        background-color: #fff;
-        margin: 3%;
-        padding: 2px;
-        border:1px solid black;
-        border-radius: 5px;
-        a {
-          text-decoration: none;
-          text-decoration-color: black;
-
-        }
-      }
-
-    }
-  }
+          }
+     }
 }
 div#MainContainer {
-  width:75%;
+     width:75%;
+     margin-left: 12.5%;
+     margin-right:12.5%;
 
 
 }

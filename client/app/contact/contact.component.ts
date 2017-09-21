@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { DataService } from '../data.service';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
