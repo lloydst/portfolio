@@ -10,12 +10,12 @@
 
   <body ng-controller="MainCtrl as vm">
     <div class="wrapper">
-    
+
     <p class="calc-display">
       <div>
         <div name="output" id="res" class="answer">{{vm.answer}}</div>
         <button type="button" name="clearAnswer" ng-click="vm.resetAnswer()">clear top bar</button>
-        
+
       </div>
       <div name="output" id="res" class="output">{{vm.output}} </div>
     </p>
@@ -44,14 +44,7 @@
         <button type="button" name="operator" ng-click='vm.operate("/")'>/</button>
       </div>
     </div>
-    <ul>
-        <li>htmlapp: <br>
-            <a href="http://localhost:3000">localhost:3000</a></li>
-        <li>jquerry: <br>
-            <a href="http://localhost:3001">localhost:3001</a></li>
-        <li>angular:<br>
-            <a href="http://localhost:3002">localhost:3002</a></li>
-    </ul>
+
     <script src="./lib/angular1.6.6.js"></script>
     <script src="./js/index.js"></script>
   </body>
