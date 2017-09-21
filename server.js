@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/jscalc', express.static(path.join('./server/views/htmlcalc')));
 app.use('/jqcalc', express.static(path.join('./server/views/jquerycalc')));
-app.use('/angularcalc', express.static(path.join('./server/views/angularcalc')));
+app.use('/angularcalc', express.static(path.join('./server/views/angularjscalc')));
 app.use('/bomberman', express.static(path.join('./server/views/bomberman')));
 app.use('/hangman', express.static(path.join('./server/views/hangman')));
 // API location
