@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build --aot --prod",
     "back": "nodemon server.js",
     "front": "ng serve -o",
     "build": "ng build",
