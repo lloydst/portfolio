@@ -8,6 +8,8 @@ var logger = morgan('combined')
 // API file for interacting with MongoDB
 const api = require('./server/routes/api');
 
+
+
 // required for heroku
 const forceSSL = function() {
      return function (req, res, next) {
@@ -19,7 +21,7 @@ const forceSSL = function() {
        next();
      }
 }
-//app.use(forceSSL());
+app.use(forceSSL());
 
 // Parsers
 app.use(bodyParser.json());

@@ -9,6 +9,7 @@ import { InternshipComponent } from './internship/internship.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { DataService } from './data.service';
+import { BlogComponent } from './blog/blog.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { DataService } from './data.service';
     ProjectsComponent,
     InternshipComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    BlogComponent
   ],
   imports: [
     HttpClientModule,
