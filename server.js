@@ -19,7 +19,7 @@ const forceSSL = function() {
        next();
      }
 }
-app.use(forceSSL());
+//app.use(forceSSL());
 
 // Parsers
 app.use(bodyParser.json());
