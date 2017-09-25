@@ -12,7 +12,7 @@
     "back": "nodemon server.js",
     "front": "ng serve -o",
     "build": "ng build",
-    "start": "node",
+    "start": "node server.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
