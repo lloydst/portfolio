@@ -30,16 +30,16 @@ app.use(bodyParser.urlencoded({ extended: false}));
 
 // express Paths
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use('/jscalc', express.static(path.join(__dirname,'./server/views/htmlcalc'))); // works
-app.use('/jqcalc', express.static(path.join(__dirname,'./server/views/jquerycalc'))); // works
-app.use('/angularcalc', express.static(path.join(__dirname,'./server/views/angularjscalc'))); // works
-app.use('/bomberman', express.static(path.join(__dirname,'./server/views/bomberman')));
-app.use('/hangman', express.static(path.join(__dirname,'./server/views/hangman')));
+app.use('/projects/jscalc', express.static(path.join(__dirname,'./server/views/htmlcalc'))); // works
+app.use('/projects/jqcalc', express.static(path.join(__dirname,'./server/views/jquerycalc'))); // works
+app.use('/projects/angularcalc', express.static(path.join(__dirname,'./server/views/angularjscalc'))); // works
+app.use('/projects/bomberman', express.static(path.join(__dirname,'./server/views/bomberman'))); // works only locally
+app.use('/projects/hangman', express.static(path.join(__dirname,'./server/views/hangman'))); // works only locally
 // API location
 app.use('/api', api);
 
 // Send all other requests to the Angular app
-app.get('/**', (req, res) => {
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
