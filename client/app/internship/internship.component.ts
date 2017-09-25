@@ -10,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class InternshipComponent {
   internships = [
      {company: 'Poort 80', start: '19-07-2017', end: '19-12-2017',
-     description: 'a description of the company...'}
+     description: 'a description of the company...' +
+     ' todo write more text'
+     }
     ];
   constructor() { }
 

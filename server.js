@@ -21,9 +21,6 @@ const forceSSL = function() {
 }
 app.use(forceSSL());
 
-
-console.log('if i am working on the api only i need to disable the line above this log! ')
-
 // Parsers
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));

@@ -1,5 +1,6 @@
-<h1>Poort 80</h1>
 <div class="assignments" *ngFor="let a of internships" >
-{{a.company}}: from:{{a.start}} until:{{a.end}}<br>
-{{a.description}}
+     <h1>{{a.company}}:</h1>
+
+     <strong>from:</strong>{{a.start}} <strong>until:</strong>{{a.end}}<br>
+     <p>{{a.description}}</p>
 </div>
