@@ -36,14 +36,14 @@ app.use('/hangman', express.static(path.join(__dirname,'./server/views/hangman')
 app.use('/api', api);
 
 // Send all other requests to the Angular app
-app.get('*', (req, res) => {
+app.get('/**', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 //Set Port
 const port = process.env.PORT || '3000';
 app.set('port', port);
-
-const server = http.createServer(app);
 app.use(forceSSL());
+const server = http.createServer(app);
+
 server.listen(port, () => console.log(`Running on localhost:${port}`));
