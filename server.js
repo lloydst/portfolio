@@ -17,7 +17,7 @@ const forceSSL = function() {
        next();
      }
 }
-
+app.use(forceSSL());
 //app.use(forceSSL());
 console.log('if i am working on the api only i need to disable the line above this log! ')
 
