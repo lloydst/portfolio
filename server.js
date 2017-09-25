@@ -17,7 +17,8 @@ const forceSSL = function() {
        next();
      }
 }
-app.use(forceSSL());
+
+//app.use(forceSSL());
 console.log('if i am working on the api only i need to disable the line above this log! ')
 
 // Parsers
@@ -28,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/jscalc', express.static(path.join(__dirname,'./server/views/htmlcalc'))); // works
 app.use('/jqcalc', express.static(path.join(__dirname,'./server/views/jquerycalc'))); // works
-app.use('/angularcalc', express.static(path.join(__dirname,'./server/views/angularjscalc')));
+app.use('/angularcalc', express.static(path.join(__dirname,'./server/views/angularjscalc'))); // works
 app.use('/bomberman', express.static(path.join(__dirname,'./server/views/bomberman')));
 app.use('/hangman', express.static(path.join(__dirname,'./server/views/hangman')));
 // API location
@@ -44,5 +45,5 @@ const port = process.env.PORT || '3000';
 app.set('port', port);
 
 const server = http.createServer(app);
-
+app.use(forceSSL());
 server.listen(port, () => console.log(`Running on localhost:${port}`));
