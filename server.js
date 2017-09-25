@@ -7,20 +7,21 @@ var morgan = require('morgan')
 var logger = morgan('combined')
 // API file for interacting with MongoDB
 const api = require('./server/routes/api');
+
 // required for heroku
-const forceSSL = function() {
+const forceNonSSL = function() {
      return function (req, res, next) {
-       if (req.headers['x-forwarded-proto'] !== 'https') {
+       if (req.headers['x-forwarded-proto'] !== 'http') {
          return res.redirect(
-          ['https://', req.get('Host'), req.url].join('')
+          ['http://', req.get('Host'), req.url].join('')
          );
        }
        next();
      }
 }
-//app.use(forceSSL());
+app.use(forceNonSSL());
 
-//app.use(forceSSL());
+
 console.log('if i am working on the api only i need to disable the line above this log! ')
 
 // Parsers
@@ -45,7 +46,7 @@ app.get('/**', (req, res) => {
 //Set Port
 const port = process.env.PORT || '3000';
 app.set('port', port);
-app.use(forceSSL());
+
 const server = http.createServer(app);
 
 server.listen(port, () => console.log(`Running on localhost:${port}`));
