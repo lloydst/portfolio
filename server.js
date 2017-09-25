@@ -9,17 +9,17 @@ var logger = morgan('combined')
 const api = require('./server/routes/api');
 
 // required for heroku
-const forceNonSSL = function() {
-     return function (req, res, next) {
-       if (req.headers['x-forwarded-proto'] !== 'http') {
-         return res.redirect(
-          ['http://', req.get('Host'), req.url].join('')
-         );
-       }
-       next();
-     }
-}
-app.use(forceNonSSL());
+// const forceNonSSL = function() {
+//      return function (req, res, next) {
+//        if (req.headers['x-forwarded-proto'] !== 'https') {
+//          return res.redirect(
+//           ['https://', req.get('Host'), req.url].join('')
+//          );
+//        }
+//        next();
+//      }
+// }
+// app.use(forceNonSSL());
 
 
 console.log('if i am working on the api only i need to disable the line above this log! ')
