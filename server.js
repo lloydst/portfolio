@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const http = require('http');
 const app = express();
-var morgan = require('morgan')
-var logger = morgan('combined')
+const morgan = require('morgan')
+const logger = morgan('combined')
 // API file for interacting with MongoDB
 const api = require('./server/routes/api');
 
