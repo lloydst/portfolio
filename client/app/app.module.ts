@@ -10,7 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { DataService } from './data.service';
 import { BlogComponent } from './blog/blog.component';
-
+import { BlogService} from './blog/blog.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,9 @@ import { BlogComponent } from './blog/blog.component';
     AppRoutingModule,
      HttpModule
   ],
-  providers: [DataService], // placeholder serves as a example
+  providers: [
+       DataService,
+     BlogService], // placeholder serves as a example
   bootstrap: [AppComponent]
 })
 export class AppModule { }

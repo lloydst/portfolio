@@ -48,4 +48,18 @@ router.get('/contact',(req, res) => {
      });
  });
 
+ router.get('/blog',(req, res) => {
+     connection((db) => {
+         db.collection('blogs')
+             .find()
+             .toArray()
+             .then((blogs) => {
+                 response.data = blogs;
+                 res.json(response);
+             })
+             .catch((err) => {
+                 sendError(err, res);
+             });
+     });
+ });
  module.exports = router;

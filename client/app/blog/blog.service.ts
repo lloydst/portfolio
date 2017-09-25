@@ -3,10 +3,12 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class BlogService {
+
      result: any;
+
      constructor(private _http: Http) { }
      // using these to access the db
-     getBlog() {
+     getBlogs() {
           // gets the json on this end point. host: /api/blog
        return this._http.get('/api/blog')
          .map(result => this.result = result.json().data);
