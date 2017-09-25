@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const http = require('http');
 const app = express();
-
+var morgan = require('morgan')
+var logger = morgan('combined')
 // API file for interacting with MongoDB
 const api = require('./server/routes/api');
 // required for heroku
@@ -17,7 +18,8 @@ const forceSSL = function() {
        next();
      }
 }
-app.use(forceSSL());
+//app.use(forceSSL());
+
 //app.use(forceSSL());
 console.log('if i am working on the api only i need to disable the line above this log! ')
 
@@ -25,7 +27,7 @@ console.log('if i am working on the api only i need to disable the line above th
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 
-// Angular DIST output folder
+// express Paths
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/jscalc', express.static(path.join(__dirname,'./server/views/htmlcalc'))); // works
 app.use('/jqcalc', express.static(path.join(__dirname,'./server/views/jquerycalc'))); // works
