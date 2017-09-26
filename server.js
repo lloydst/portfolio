@@ -47,10 +47,10 @@ const port = process.env.PORT || '3000';
 app.set('port', port);
 
 const server = http.createServer(app);
+// keep heroku alive always to prevent new users from having to wait for the free dyno to speed up
 
-var http = require("http");
 setInterval(function() {
     http.get("https://lloyd-portfolio..herokuapp.com");
-}, 300000); // every 5 minutes (300000)
+}, 9000000); // every 30 minutes (300000)
 server.listen(port, () => console.log(`Running on localhost:${port}`));
 
