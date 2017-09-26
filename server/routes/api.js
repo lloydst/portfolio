@@ -71,11 +71,11 @@ router.get('/contact',(req, res) => {
              });
      });
 });
-router.put('/blog',(req, res) => {             // add a new one
+router.post('/blog',(req, res) => {             // add a new one
     connection((db) => {
         db.collection('blogs')
-            .insertMany(newBlogTitle, NewBlogBody)                      // get the title and body from a form
-            .toArray()
+            .insertMany()                      // get the title and body from the form
+
             .then((blogs) => {
                 response.data = blogs;
                 res.json(response);

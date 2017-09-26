@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-blog',
@@ -9,7 +9,9 @@ import { FormControl } from '@angular/forms';
 
 export class AdminBlogComponent {
 
-  constructor() { }
+  constructor() {
+     const blogData = new FormData
+  }
 
 
 
