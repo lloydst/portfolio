@@ -455,23 +455,24 @@ app.controller('bomberControl', function($scope) {
         }, 3000);
     }
         //   function   key keyid   type:
-        // ''   up      38  up      ArrowKey
-        // ''   down    40  down    ArrowKey
-        // ''   right   39  right   ArrowKey
+        //      a    65  left    letter
+        // ''   w    87  up      letter
+        // ''   s    83  down    letter
+        // ''   d   68  right   letter
         // ''   bomb    32  space   spaceBar
 
         angular.element(document).keydown(function(event) {
-            //alert( "Key: " + event.which );
-            if (event.which === 37) {
+            // alert( "Key: " + event.which );
+            if (event.which === 65) {
                 left()
                 playerlocation()
-            } else if (event.which === 38) {
+            } else if (event.which === 87) {
                 up()
                 playerlocation()
-            }else if (event.which === 40) {
+            }else if (event.which === 83) {
                 down()
                 playerlocation()
-            } else if (event.which === 39) {
+            } else if (event.which === 68) {
                 right()
                 playerlocation()
             } else if (event.which === 32) {

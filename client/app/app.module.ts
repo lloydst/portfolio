@@ -11,15 +11,19 @@ import { AboutComponent } from './about/about.component';
 import { DataService } from './data.service';
 import { BlogComponent } from './blog/blog.component';
 import { BlogService} from './blog/blog.service';
+import { AdminBlogComponent } from './admin-blog/admin-blog.component';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProjectsComponent,
-    InternshipComponent,
-    ContactComponent,
-    AboutComponent,
-    BlogComponent
+     declarations: [
+     AppComponent,
+     ProjectsComponent,
+     InternshipComponent,
+     ContactComponent,
+     AboutComponent,
+     BlogComponent,
+     AdminBlogComponent,
+
   ],
   imports: [
     HttpClientModule,
@@ -28,8 +32,9 @@ import { BlogService} from './blog/blog.service';
      HttpModule
   ],
   providers: [
-       DataService,
-     BlogService], // placeholder serves as a example
+     DataService,
+     BlogService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

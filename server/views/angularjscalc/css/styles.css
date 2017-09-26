@@ -67,4 +67,5 @@ button[name=num] {
     background-color: navy;
     width:220px;
     margin: 100px auto;
+    margin-bottom:80px;
   }

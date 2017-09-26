@@ -6,12 +6,21 @@ const ObjectID = require('mongodb').ObjectID;
 
 // Connect db
 const connection = (closure) => {
-     return MongoClient.connect('mongodb://admin:admin@ds153853.mlab.com:53853/portfolio', (err, db) => {
-         if (err) return console.log(err);
+     if (process.env.NODE_ENV === "production") {
+          return MongoClient.connect('mongodb://admin:admin@ds153853.mlab.com:53853/portfolio', (err, db) => {
+               if (err) return console.log(err);
 
-         closure(db);
-     });
- };
+          closure(db);
+          });
+     } else {
+          return MongoClient.connect('mongodb://localhost:27017/portfolio',(err, db) => {
+               if(err) return console.log(err);
+
+          closure(db);
+          });
+     }
+};
+
 // Error handling
 const sendError = (err, res) => {
      response.status = 501;
@@ -48,7 +57,7 @@ router.get('/contact',(req, res) => {
      });
  });
 
- router.get('/blog',(req, res) => {
+ router.get('/blog',(req, res) => {               // get all
      connection((db) => {
          db.collection('blogs')
              .find()
@@ -61,47 +70,47 @@ router.get('/contact',(req, res) => {
                  sendError(err, res);
              });
      });
- });
- router.put('/blog',(req, res) => {
-     connection((db) => {
-         db.collection('blogs')
-             .find()
-             .toArray()
-             .then((blogs) => {
-                 response.data = blogs;
-                 res.json(response);
-             })
-             .catch((err) => {
-                 sendError(err, res);
-             });
-     });
- });
- router.delete('/blog:id',(req, res) => {
-     connection((db) => {
-         db.collection('blogs')
-             .find()
-             .toArray()
-             .then((blogs) => {
-                 response.data = blogs;
-                 res.json(response);
-             })
-             .catch((err) => {
-                 sendError(err, res);
-             });
-     });
- });
- router.get('/blog',(req, res) => {
-     connection((db) => {
-         db.collection('blogs')
-             .find()
-             .toArray()
-             .then((blogs) => {
-                 response.data = blogs;
-                 res.json(response);
-             })
-             .catch((err) => {
-                 sendError(err, res);
-             });
-     });
- });
+});
+router.put('/blog',(req, res) => {             // add a new one
+    connection((db) => {
+        db.collection('blogs')
+            .insertMany(newBlogTitle, NewBlogBody)                      // get the title and body from a form
+            .toArray()
+            .then((blogs) => {
+                response.data = blogs;
+                res.json(response);
+            })
+            .catch((err) => {
+                sendError(err, res);
+            });
+    });
+});
+router.delete('/blog:id',(req, res) => {       // delete a blog
+    connection((db) => {
+        db.collection('blogs')
+            .find()
+            .toArray()
+            .then((blogs) => {
+                response.data = blogs;
+                res.json(response);
+            })
+            .catch((err) => {
+                sendError(err, res);
+            });
+    });
+});
+// router.update('/blog',(req, res) => {          // update one
+//     connection((db) => {
+//         db.collection('blogs')
+//             .find()
+//             .toArray()
+//             .then((blogs) => {
+//                 response.data = blogs;
+//                 res.json(response);
+//             })
+//             .catch((err) => {
+//                 sendError(err, res);
+//             });
+//     });
+// });
  module.exports = router;
