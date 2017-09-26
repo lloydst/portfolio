@@ -62,4 +62,46 @@ router.get('/contact',(req, res) => {
              });
      });
  });
+ router.put('/blog',(req, res) => {
+     connection((db) => {
+         db.collection('blogs')
+             .find()
+             .toArray()
+             .then((blogs) => {
+                 response.data = blogs;
+                 res.json(response);
+             })
+             .catch((err) => {
+                 sendError(err, res);
+             });
+     });
+ });
+ router.delete('/blog:id',(req, res) => {
+     connection((db) => {
+         db.collection('blogs')
+             .find()
+             .toArray()
+             .then((blogs) => {
+                 response.data = blogs;
+                 res.json(response);
+             })
+             .catch((err) => {
+                 sendError(err, res);
+             });
+     });
+ });
+ router.get('/blog',(req, res) => {
+     connection((db) => {
+         db.collection('blogs')
+             .find()
+             .toArray()
+             .then((blogs) => {
+                 response.data = blogs;
+                 res.json(response);
+             })
+             .catch((err) => {
+                 sendError(err, res);
+             });
+     });
+ });
  module.exports = router;

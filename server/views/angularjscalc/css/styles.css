@@ -32,7 +32,7 @@ button[name=num] {
     margin: 1px;
     padding: 1px;
   }
-  
+
   .output {
     width: 215px;
     height: 25px;
@@ -66,4 +66,5 @@ button[name=num] {
   .wrapper{
     background-color: navy;
     width:220px;
+    margin: 100px auto;
   }
