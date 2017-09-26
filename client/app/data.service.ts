@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
-
+import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import { Blog } from '../models/blog';
 @Injectable()
 export class DataService {
      result: any;
@@ -10,6 +11,10 @@ export class DataService {
        return this._http.get('/api/contact')
          .map(result => this.result = result.json().data);
      }
-
+     getBlogs() {
+          return this._http.get('api/blog')
+          .map(result => this.result = result.json().data)
+          .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+     }
 
 }

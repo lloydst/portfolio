@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { DataService } from './data.service';
 import { BlogComponent } from './blog/blog.component';
 import { BlogService} from './blog/blog.service';
+import { AdminBlogComponent } from './admin-blog/admin-blog.component';
 
 
 
@@ -21,7 +22,8 @@ import { BlogService} from './blog/blog.service';
      InternshipComponent,
      ContactComponent,
      AboutComponent,
-     BlogComponent
+     BlogComponent,
+     AdminBlogComponent
 
   ],
   imports: [
