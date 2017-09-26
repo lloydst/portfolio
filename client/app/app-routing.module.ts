@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'about', component: AboutComponent},
   { path: 'blog', component: BlogComponent},
-  { path: 'admin/blog', component: AdminBlogComponent}
+  { path: 'admin/blog', component: AdminBlogComponent},
+  { path: '', component: AboutComponent}
 ];
 
 @NgModule({
@@ -21,3 +22,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
