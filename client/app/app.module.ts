@@ -11,7 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { DataService } from './data.service';
 import { BlogComponent } from './blog/blog.component';
 import { BlogService} from './blog/blog.service';
-import { AdminBlogComponent } from './admin-blog/admin-blog.component';
+
 
 
 @NgModule({
@@ -21,8 +21,7 @@ import { AdminBlogComponent } from './admin-blog/admin-blog.component';
      InternshipComponent,
      ContactComponent,
      AboutComponent,
-     BlogComponent,
-     AdminBlogComponent,
+     BlogComponent
 
   ],
   imports: [
