@@ -48,4 +48,9 @@ app.set('port', port);
 
 const server = http.createServer(app);
 
+var http = require("http");
+setInterval(function() {
+    http.get("https://lloyd-portfolio..herokuapp.com");
+}, 300000); // every 5 minutes (300000)
 server.listen(port, () => console.log(`Running on localhost:${port}`));
+
