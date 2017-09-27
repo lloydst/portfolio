@@ -15,6 +15,7 @@ export class BlogService {
      }
      postBlog() {
           // code here to clean up text area's and post to the api/blog endpoint
+          // tslint:disable-next-line:quotemark
           return "I'm not implemented yet";
      }
 }
