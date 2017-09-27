@@ -71,46 +71,5 @@ router.get('/contact',(req, res) => {
              });
      });
 });
-router.post('/blog',(req, res) => {             // add a new one
-    connection((db) => {
-        db.collection('blogs')
-            .insertMany()                      // get the title and body from the form
 
-            .then((blogs) => {
-                response.data = blogs;
-                res.json(response);
-            })
-            .catch((err) => {
-                sendError(err, res);
-            });
-    });
-});
-router.delete('/blog:id',(req, res) => {       // delete a blog
-    connection((db) => {
-        db.collection('blogs')
-            .find()
-            .toArray()
-            .then((blogs) => {
-                response.data = blogs;
-                res.json(response);
-            })
-            .catch((err) => {
-                sendError(err, res);
-            });
-    });
-});
-// router.update('/blog',(req, res) => {          // update one
-//     connection((db) => {
-//         db.collection('blogs')
-//             .find()
-//             .toArray()
-//             .then((blogs) => {
-//                 response.data = blogs;
-//                 res.json(response);
-//             })
-//             .catch((err) => {
-//                 sendError(err, res);
-//             });
-//     });
-// });
  module.exports = router;

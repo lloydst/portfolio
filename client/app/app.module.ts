@@ -8,10 +8,10 @@ import { ProjectsComponent } from './projects/projects.component';
 import { InternshipComponent } from './internship/internship.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { DataService } from './data.service';
+import { DataService } from './services/data.service';
 import { BlogComponent } from './blog/blog.component';
 import { BlogService} from './blog/blog.service';
-import { AdminBlogComponent } from './admin-blog/admin-blog.component';
+
 
 
 
@@ -22,8 +22,7 @@ import { AdminBlogComponent } from './admin-blog/admin-blog.component';
      InternshipComponent,
      ContactComponent,
      AboutComponent,
-     BlogComponent,
-     AdminBlogComponent
+     BlogComponent
 
   ],
   imports: [
