@@ -71,18 +71,17 @@ router.get('/contact',(req, res) => {
              });
      });
 });
-router.post('/blog', (value) =>{
+router.post('/blog', function( req, res ){
      connection((db) => {
           db.collection('blogs')
-          .post()
-          .then((value) =>{
-               respons.data = value;
-               res.json(value);
-          })
-          .catch((err) => {
-               sendError(err, res);
-          });
+          .insertOne(req.body)
+          console.log('triggered')
+     })
+     console.log(req.body)
+     res.send('i am a derp')
      });
-});
+
+
+
 
  module.exports = router;

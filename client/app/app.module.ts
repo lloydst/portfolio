@@ -12,7 +12,9 @@ import { AboutComponent } from './about/about.component';
 import { ContactService } from './services/contact.service';
 import { BlogComponent } from './blog/blog.component';
 import { BlogService} from './services/blog.service';
-import { AdminBlogComponent } from './admin-blog/admin-blog.component';
+import { AdminComponent } from './admin/admin.component';
+
+
 
 
 
@@ -25,7 +27,7 @@ import { AdminBlogComponent } from './admin-blog/admin-blog.component';
      ContactComponent,
      AboutComponent,
      BlogComponent,
-     AdminBlogComponent
+     AdminComponent
 
      ],
      imports: [

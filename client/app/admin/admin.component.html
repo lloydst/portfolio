@@ -1,0 +1,17 @@
+<form [formGroup]="blog" (submit)="post()">
+     <div>
+          <label>Title:
+               <input type="text" formControlName="title">
+          </label>
+     </div>
+     <div>
+          <label>Blog: <br>
+               <textarea rows="20" cols="75" formControlName="body"></textarea>
+          </label>
+     </div>
+<button type="submit">submit!</button>
+</form>
+<p>Form value: {{ blog.value | json }}</p>
+<app-blog></app-blog>
+
+

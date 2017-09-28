@@ -5,7 +5,7 @@ import { InternshipComponent } from './internship/internship.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent} from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
-import { AdminBlogComponent } from './admin-blog/admin-blog.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'projects', component: ProjectsComponent},
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'about', component: AboutComponent},
   { path: 'blog', component: BlogComponent},
-  { path: 'a-blog', component: AdminBlogComponent},
+  { path: 'admin', component: AdminComponent},
   { path: '', component: AboutComponent},
   { path: '*', component: AboutComponent}
 ];
