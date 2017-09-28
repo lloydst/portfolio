@@ -1,7 +1,8 @@
 export class Blog {
      constructor(
-        public title: string,
-        public body: string,
-        public date: string
+          public id: Date,
+          public title: string,
+          public body: string
+
      ) {}
   }

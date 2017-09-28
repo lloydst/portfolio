@@ -2,15 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent} from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProjectsComponent } from './projects/projects.component';
 import { InternshipComponent } from './internship/internship.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { DataService } from './services/data.service';
+import { ContactService } from './services/contact.service';
 import { BlogComponent } from './blog/blog.component';
-import { BlogService} from './blog/blog.service';
+import { BlogService} from './services/blog.service';
+import { AdminBlogComponent } from './admin-blog/admin-blog.component';
 
 
 
@@ -22,19 +24,21 @@ import { BlogService} from './blog/blog.service';
      InternshipComponent,
      ContactComponent,
      AboutComponent,
-     BlogComponent
+     BlogComponent,
+     AdminBlogComponent
 
-  ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-     HttpModule
-  ],
-  providers: [
-     DataService,
+     ],
+     imports: [
+     HttpClientModule,
+     BrowserModule,
+     AppRoutingModule,
+     HttpModule,
+     ReactiveFormsModule
+     ],
+     providers: [
+     ContactService,
      BlogService
-],
-  bootstrap: [AppComponent]
+     ],
+     bootstrap: [AppComponent]
 })
 export class AppModule { }

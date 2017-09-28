@@ -71,5 +71,18 @@ router.get('/contact',(req, res) => {
              });
      });
 });
+router.post('/blog', (value) =>{
+     connection((db) => {
+          db.collection('blogs')
+          .post()
+          .then((value) =>{
+               respons.data = value;
+               res.json(value);
+          })
+          .catch((err) => {
+               sendError(err, res);
+          });
+     });
+});
 
  module.exports = router;

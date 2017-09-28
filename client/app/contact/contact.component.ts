@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { DataService } from '../services/data.service';
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,10 +13,10 @@ export class ContactComponent {
 
 
 
-  constructor(private _dataService: DataService) {
+  constructor(private contactService: ContactService) {
 
          // Access the Data Service's getUsers() method we defined
-         this._dataService.getUsers()
+         this.contactService.getContact()
              .subscribe(res => this.contact = res);
        }
      }
