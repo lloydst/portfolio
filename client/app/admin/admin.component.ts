@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup  } from '@angular/forms';
 import { Http } from '@angular/http';
+import { BlogService} from '../services/blog.service';
 
 
 @Component({
@@ -10,23 +11,41 @@ import { Http } from '@angular/http';
 })
 export class AdminComponent {
      blog: FormGroup;
+     blogs: Array<any>;
+
+
+
 
   constructor(
           private _http: Http,
-          private fb: FormBuilder ) {
+          private fb: FormBuilder,
+          private _blogService: BlogService ) {
                 this.createForm();
+                this._blogService.getBlogs()
+                .subscribe(res => this.blogs = res);
      }
-      createForm() {
+     createForm() {
           this.blog = this.fb.group({
                title: '',
                body: '',
-               });
-          }
+          });
+     }
 
-  post() {
-     const content = this.blog.value;
+     post() {
+          const content = this.blog.value;
+          this._http.post('/api/blog', content).subscribe(content);
+     }
+     delete() {
+          const content = this.blog.value;
+          this._http.delete('/api/blog/_id', content).subscribe(content);
+          console.log('delete called');
 
-     this._http.post('/api/blog', content).subscribe(content);
-  }
+     }
+     edit() {
+          const content = this.blog.value;
+          this._http.put('/api/blog', content).subscribe(content);
+          console.log('edit called');
+
+     }
 
 }

@@ -9,9 +9,20 @@
                <textarea rows="20" cols="75" formControlName="body"></textarea>
           </label>
      </div>
-<button type="submit">submit!</button>
+<button type="submit" (submit)="post()">submit!</button>
 </form>
-<p>Form value: {{ blog.value | json }}</p>
-<app-blog></app-blog>
+<p>Preview: {{ blog.value | json}}</p>
+<div *ngFor="let b of blogs">
+     {{b._id}} <br>
+     <h1>{{b.title}}</h1>
+     <div >
+          {{b.body}}
+          <hr>
+     </div>
+     <button id="{{b._id}}" (click)="edit()">Edit:</button>
+     <button id="{{b._id}}" (click)="delete()">Delete:</button>
+</div>
+
+
 
 

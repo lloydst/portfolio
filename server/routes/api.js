@@ -78,7 +78,7 @@ router.post('/blog', function( req, res ){
           console.log('triggered')
      })
      console.log(req.body)
-     res.send('i am a derp')
+     
      });
 
 
