@@ -32,7 +32,7 @@ test.describe('Google Search', function() {
                assert.equal(value, 'simple programmer');
           });
           driver.get('http://www.google.com');
-          const searchBox = driver.findElement(webdriver.By.name('q'));
+
           searchBox.sendKeys('simple programmer');
           searchBox.getAttribute('value').then(function(value) {
                assert.equal(value, 'simple programmer');
