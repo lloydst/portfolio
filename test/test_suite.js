@@ -1,25 +1,59 @@
-const fs = require('fs');
-const webdriver = require('selenium-webdriver');
-const chromedriver = require('chromedriver');
+const assert = require('assert'),
+     test = require('selenium-webdriver/testing'),
+     webdriver = require('selenium-webdriver');
 
-const chromeCapabilities = webdriver.Capabilities.chrome();
-chromeCapabilities.set('chromeOptions', {args: ['headless','disable-gpu','window-size=1920x1080']});
+/**
+ * Example script below
+ */
 
-const driver = new webdriver.Builder()
-  .forBrowser('chrome')
-  .withCapabilities(chromeCapabilities)
-  .build();
+//test.describe('description', function(){
+//     this.timeout(40000);
+//     test.it('expected behaviour', function(){
+//          const driver = new webdriver.Builder()
+//          .withCapabilities(webdriver.Capabilities.chrome()) // chrome can be any browser
+//          .build();
+//     driver.get('page link');
+//     // local vars
+//     // things that need to be true
+//     driver.quit();
+//     });
+//});
 
-// Navigate to google.com, enter a search.
-function Test(driver) {
-     driver.get('http://www.google.com/ncr');
-     driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
-     driver.wait(until.titleIs('webdriver - Google Search'), 10000);
-
-// Take screenshot of results page. Save to disk.
-driver.takeScreenshot().then(base64png => {
-  fs.writeFileSync('screenshot.png', new Buffer(base64png, 'base64'));
+test.describe('Google Search', function() {
+     this.timeout(40000);     // sets the max timeout. default = 2000 ms = 2  seconds
+     test.it('should work', function() {
+          const driver = new webdriver.Builder().
+          withCapabilities(webdriver.Capabilities.firefox()).
+          build();
+          driver.get('http://www.google.com');
+          const searchBox = driver.findElement(webdriver.By.name('q'));
+          searchBox.sendKeys('simple programmer');
+          searchBox.getAttribute('value').then(function(value) {
+               assert.equal(value, 'simple programmer');
+          });
+          driver.get('http://www.google.com');
+          const searchBox = driver.findElement(webdriver.By.name('q'));
+          searchBox.sendKeys('simple programmer');
+          searchBox.getAttribute('value').then(function(value) {
+               assert.equal(value, 'simple programmer');
+          });
+     driver.quit();
+     });
 });
-}
+test.describe('2nd Google Search',function(){
+     this.timeout(40000);
+     test.it('should work too',function(){
+          const driver = new webdriver.Builder()
+               .withCapabilities(webdriver.Capabilities.chrome())
+               .build();
+          driver.get('http://google.com');
+          const searchBox = driver.findElement(webdriver.By.name('q'));
+          searchBox.sendKeys('not so simple programmer');
+          searchBox.getAttribute('value').then(function(value) {
+               assert.equal(value, 'not so simple programmer');
+          });
+          driver.quit();
+     });
+});
 
-driver.quit();
+

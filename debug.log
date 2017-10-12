@@ -1,0 +1,3 @@
+[1012/095740.886:ERROR:process_reader_win.cc(123)] NtOpenThread: {Toegang geweigerd} Een proces heeft toegang tot een object aangevraagd, maar heeft deze toegangsrechten niet gekregen.  (0xc0000022)
+[1012/095740.902:ERROR:exception_snapshot_win.cc(87)] thread ID 3036 not found in process
+[1012/095740.903:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
